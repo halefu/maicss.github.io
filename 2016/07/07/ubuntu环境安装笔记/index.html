@@ -1,0 +1,187 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  
+  <title>ubuntu环境安装笔记 | Maic</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  
+    <meta name="author" content="Maicss">
+  
+  
+    <meta name="description" content="因为有好几个平台，虚拟机啊，物理机，还有一个mac，经常安装很多次环境，但是又一直忘，就整理一次好了。
+ubuntusu用户超级用户设置。sudo passwd [root]，然后键入两次密码就行。[root]可能不是必须的
+安装java8">
+  
+  <meta name="description" content="因为有好几个平台，虚拟机啊，物理机，还有一个mac，经常安装很多次环境，但是又一直忘，就整理一次好了。
+ubuntusu用户超级用户设置。sudo passwd [root]，然后键入两次密码就行。[root]可能不是必须的
+安装java8">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ubuntu环境安装笔记">
+<meta property="og:url" content="http://maicss.com/2016/07/07/ubuntu环境安装笔记/index.html">
+<meta property="og:site_name" content="Maic">
+<meta property="og:description" content="因为有好几个平台，虚拟机啊，物理机，还有一个mac，经常安装很多次环境，但是又一直忘，就整理一次好了。
+ubuntusu用户超级用户设置。sudo passwd [root]，然后键入两次密码就行。[root]可能不是必须的
+安装java8">
+<meta property="og:updated_time" content="2016-07-07T12:57:41.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ubuntu环境安装笔记">
+<meta name="twitter:description" content="因为有好几个平台，虚拟机啊，物理机，还有一个mac，经常安装很多次环境，但是又一直忘，就整理一次好了。
+ubuntusu用户超级用户设置。sudo passwd [root]，然后键入两次密码就行。[root]可能不是必须的
+安装java8">
+  
+    <link rel="alternate" href="/atom.xml" title="Maic" type="application/atom+xml">
+  
+  
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+</head>
+
+<body>
+  <div class="wrapper">
+    <header id="header">
+  <div class="title">
+    <h1><a href="/">Maic</a></h1>
+    <p><a href="/">FEE</a></p>
+  </div>
+  <nav class="nav">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+      
+        <li><a href="/atom.xml">RSS</a></li>
+      
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
+  <div class="clearfix"></div>
+</header>
+    <div class="content"><article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/2016/07/07/ubuntu环境安装笔记/">
+  <time datetime="2016-07-07T11:57:41.000Z">
+    2016-07-07
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title">ubuntu环境安装笔记</h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <p>因为有好几个平台，虚拟机啊，物理机，还有一个mac，经常安装很多次环境，但是又一直忘，就整理一次好了。</p>
+<h2 id="ubuntu"><a href="#ubuntu" class="headerlink" title="ubuntu"></a>ubuntu</h2><h3 id="su用户"><a href="#su用户" class="headerlink" title="su用户"></a>su用户</h3><p>超级用户设置。<code>sudo passwd [root]</code>，然后键入两次密码就行。<code>[root]</code>可能不是必须的</p>
+<h3 id="安装java8"><a href="#安装java8" class="headerlink" title="安装java8"></a>安装java8</h3><a id="more"></a>
+<p>因为安装了三次（我比较折腾），每次都要配置很多环境，而我又是新手，每次都记不住，很苦恼。有次偶然发现了一个不错的一键安装式的，就是<a href="http://www.webupd8.org/2014/03/how-to-install-oracle-java-8-in-debian.html" target="_blank" rel="external">webupd8</a>。只需要四个命令就行了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">su</div><div class="line">echo &quot;deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main&quot; | tee /etc/apt/sources.list.d/webupd8team-java.list</div><div class="line">echo &quot;deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main&quot; | tee -a /etc/apt/sources.list.d/webupd8team-java.list</div><div class="line">apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys EEA14886</div><div class="line">apt-get update</div><div class="line">apt-get install oracle-java8-installer</div></pre></td></tr></table></figure></p>
+<p>敲完之后，就直接在线安装了，这个是图，忽略我那渣速度。<br>![img]<br>因为ubuntu默认安装了一个openjdk什么的，还要覆盖环境变量设置。但是这个方式安装是直接设置好环境变量。<br>懒人必备啊，现在我还不知道这个是怎么直接在线安装的，以后再说吧。</p>
+<h3 id="安装pycharm"><a href="#安装pycharm" class="headerlink" title="安装pycharm"></a>安装pycharm</h3><p>走到这一步你会发现，这个都是按照顺序来的。唉都是泪，一点点坑爬过来的。<br>因为这个要求java编译安装什么的…。</p>
+<p>先给他们打打广告。他们家的编辑器真的用心啊，真的。买三年的话，一年大约300块，不算很贵的，有能力的话支持一下。</p>
+<p>安装完java之后，下载压缩包，然后<code>tar -zxvf</code>解压，进入解压后的目录，然后是<code>bin</code>文件夹，之后直接执行<code>./pycharm.sh</code>即可自动安装。</p>
+<h3 id="安装zsh"><a href="#安装zsh" class="headerlink" title="安装zsh"></a>安装zsh</h3><p>因为是刚入门，现在还体会不到zsh和bash的区别，最明显的就是在git的文件夹下面会出现相关的提示信息吧。大家都推崇的文件夹跳转的<code>jump</code>插件，因为需要跳转的文件夹比较少，还体会不到这种方便，这种会在多次经常而且很深的目录之间切换会很爽吧。</p>
+<ul>
+<li>安装直接<code>sudo apt-get install zsh</code>就搞定了。</li>
+<li>看一下配置里面有没有zsh：<code>cat /etc/shells</code>。</li>
+<li>然后切换默认的shell：<code>chsh -s /usr/bin/zsh</code>，文件路径是我自己的，别照抄就行。但是我在ubuntu下试过两次，这个文件夹都可以的。</li>
+</ul>
+<p><strong>我被震惊了</strong></p>
+<p>没事在逛网页的时候，发现了这个</p>
+<blockquote>
+<p>Zsh的最初版本是在1990年由Paul Falstad写成，当时他是普林斯顿大学的学生。他以普林斯頓大學助理教授邵中(Zhong Shao)的名字來命名zsh。[来源：维基百科]</p>
+</blockquote>
+<p>然后我去看了看这个人。</p>
+<p>这个是<a href="http://cs.ustc.edu.cn/szdw/dsjx/201008/t20100813_31718.html" target="_blank" rel="external">科技大</a>给出的简介，这个是<a href="http://www.cs.yale.edu/homes/shao/" target="_blank" rel="external">yale</a>给出的简介。</p>
+<p>我被震惊了。</p>
+<p>再看看科技大的第一行的那三个人，我真的被吓到了。</p>
+<h2 id="boot空间不足"><a href="#boot空间不足" class="headerlink" title="/boot空间不足"></a>/boot空间不足</h2><p>装系统的时候以为boot是启动之类的东西，感觉这个应该很小的，就给了200MB，用的时候，我后悔了，恨自己没给1G…</p>
+<p>升级的时候，老是说我空间不足，使用<code>sudo apt-get autoremove</code>或者使用<code>sudo apt-get clean</code>腾出来一点空间。</p>
+<p>这次怎么都不行，我bing了一下（lantern不稳定，我也没办法），下面是解决方法。</p>
+<p>每次Ubuntu升级，都会安装一个内核，为了安全起见，会同时保留3个（左右）的内核，多于这个数字的时候，会提示你删除一些不必要的。但是这次升级的内核一个占了180MB…</p>
+<p>下面是命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">dpkg --get-selections | grep | linux-image <span class="comment"># 这个是列出当前安装的所有的内核。直接ls /boot也行...</span></div><div class="line">uname <span class="_">-a</span> <span class="comment"># 这个是查看当前使用的内核，别不小心把当前使用的卸载了（好奇怪的设定）</span></div><div class="line">sudo apt-get purge | linux-image-4.20.xx-generic <span class="comment"># 这个是删除的命令。到这就应该搞定了，建议保留2个不用的，也就是同时存在3个内核。</span></div></pre></td></tr></table></figure></p>
+<h2 id="文件夹名称切换成英文"><a href="#文件夹名称切换成英文" class="headerlink" title="文件夹名称切换成英文"></a>文件夹名称切换成英文</h2><p>安装时选择语言后，文件夹也默认改成了对应的语言，在terminal里面输入中文，呃，有点扯。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">export LANG=en_US</div><div class="line">xdg-user-dirs-gtk-update</div></pre></td></tr></table></figure></p>
+<p>这个时候会弹出一个窗口，问是否转换文件夹名称，点apply就行了<br>然后再切换回来<code>export LANG=zh_CN</code></p>
+<h2 id="本地代理"><a href="#本地代理" class="headerlink" title="本地代理"></a>本地代理</h2><p>想在terminal里用lantern，看别人说的直接设置http_proxy变量就行了，然后发现并没有什么卵用。<br>后来我brew install 一些东西的时候，因为有这个反倒挂了。忘了怎么取消设置，就搜了一下。</p>
+<p>设置的命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">export http_proxy=&apos;xxx&apos;</div></pre></td></tr></table></figure></p>
+<p>查看的命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">env | grep proxy</div><div class="line"># http_proxy=http://proxy.studnet.lan:8080</div><div class="line"># ftp_proxy=ftp://proxy.studnet.lan:8080</div><div class="line"># socks_proxy=socks://proxy.studnet.lan:8080</div><div class="line"># https_proxy=https://proxy.studnet.lan:8080</div><div class="line"># 或者</div><div class="line">echo $http_proxy</div></pre></td></tr></table></figure></p>
+<p>取消的命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">unset http_proxy</div><div class="line">unset ftp_proxy</div><div class="line">unset socks_proxy</div><div class="line">unset https_proxy</div></pre></td></tr></table></figure></p>
+<h2 id="nano-常用快捷键"><a href="#nano-常用快捷键" class="headerlink" title="nano 常用快捷键"></a>nano 常用快捷键</h2><p><em>另外这玩意不知道怎么才能设置一个tab为4个空格，好烦（对，我就是tab变空格党，来打我啊^_^）</em></p>
+<blockquote>
+<p>C =&gt; Ctrl, A =&gt; Alt</p>
+</blockquote>
+<ul>
+<li>C+O =&gt; 保存</li>
+<li>C+X =&gt; 退出编辑器</li>
+<li>A+\ =&gt; 跳转到文件头</li>
+<li>A+/ =&gt; 跳转到文件尾</li>
+<li>A+W =&gt; 查找</li>
+<li>A+R =&gt; 替换</li>
+<li>C+_ =&gt; 跳转到行</li>
+<li>C+K =&gt; 剪切当前行 / 开关：A+K</li>
+<li>C+U =&gt; 粘贴</li>
+<li>A+M =&gt; 鼠标支持</li>
+<li>A+$ =&gt; 软换行(这个好扯, mac上的这个是截屏)</li>
+<li>A+] =&gt; 跳转到对应括号</li>
+</ul>
+<p>另外，我自己倒腾的<a href="https://github.com/maicss/some_conf/blob/master/.nanorc" target="_blank" rel="external">nanorc配置</a></p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>本来还想弄个Ubuntu 物理机的安装笔记的。但是我安装两次之后得出来的血的教训就是：<br>小白弄啥物理机，虚拟机完全够用了，净倒腾。</p>
+<p>分区，网卡，启动，莫名假死…受够了</p>
+
+    
+  </div>
+  <footer>
+    
+      
+      
+  <div class="tags">
+    <a class="tags-link" href="/tags/ubuntu学习/">ubuntu学习</a>
+  </div>
+
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+</div>
+  </div>
+  <footer id="footer"><div class="copyright">
+  
+  &copy; 2016 <a href="/">Maicss</a>
+  
+</div>
+<div class="theme-copyright">
+  Theme by <a href="https://github.com/orderedlist" target="_blank">orderedlist</a>
+   | 
+  Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<script src="/js/scale.fix.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
+</script>
+
+</body>
+</html>

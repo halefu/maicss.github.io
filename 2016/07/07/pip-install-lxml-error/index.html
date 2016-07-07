@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  
+  <title>pip install lxml error | Maic</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  
+    <meta name="author" content="Maicss">
+  
+  
+    <meta name="description" content="这个简直X爆了，我只能用这个词总结了。
+咱们一个个的说。
+install pippip安装的时候，一直出现编码错误，编码长度超过了ascii的长度。这个一看就是编解码非utf-8的结果。我在网上搜了很多次了，都说设置一下默认编码格式就行了。但是问题是，我总不能在pip安装的时候，每次都手动下载源码包，然后编辑setup.py在文件头上设置一下吧。">
+  
+  <meta name="description" content="这个简直X爆了，我只能用这个词总结了。
+咱们一个个的说。
+install pippip安装的时候，一直出现编码错误，编码长度超过了ascii的长度。这个一看就是编解码非utf-8的结果。我在网上搜了很多次了，都说设置一下默认编码格式就行了。但是问题是，我总不能在pip安装的时候，每次都手动下载源码包，然后编辑setup.py在文件头上设置一下吧。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="pip install lxml error">
+<meta property="og:url" content="http://maicss.com/2016/07/07/pip-install-lxml-error/index.html">
+<meta property="og:site_name" content="Maic">
+<meta property="og:description" content="这个简直X爆了，我只能用这个词总结了。
+咱们一个个的说。
+install pippip安装的时候，一直出现编码错误，编码长度超过了ascii的长度。这个一看就是编解码非utf-8的结果。我在网上搜了很多次了，都说设置一下默认编码格式就行了。但是问题是，我总不能在pip安装的时候，每次都手动下载源码包，然后编辑setup.py在文件头上设置一下吧。">
+<meta property="og:updated_time" content="2016-07-07T12:50:09.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="pip install lxml error">
+<meta name="twitter:description" content="这个简直X爆了，我只能用这个词总结了。
+咱们一个个的说。
+install pippip安装的时候，一直出现编码错误，编码长度超过了ascii的长度。这个一看就是编解码非utf-8的结果。我在网上搜了很多次了，都说设置一下默认编码格式就行了。但是问题是，我总不能在pip安装的时候，每次都手动下载源码包，然后编辑setup.py在文件头上设置一下吧。">
+  
+    <link rel="alternate" href="/atom.xml" title="Maic" type="application/atom+xml">
+  
+  
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+</head>
+
+<body>
+  <div class="wrapper">
+    <header id="header">
+  <div class="title">
+    <h1><a href="/">Maic</a></h1>
+    <p><a href="/">FEE</a></p>
+  </div>
+  <nav class="nav">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+      
+        <li><a href="/atom.xml">RSS</a></li>
+      
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
+  <div class="clearfix"></div>
+</header>
+    <div class="content"><article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/2016/07/07/pip-install-lxml-error/">
+  <time datetime="2016-07-07T12:25:22.000Z">
+    2016-07-07
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title">pip install lxml error</h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <p>这个简直X爆了，我只能用这个词总结了。</p>
+<p>咱们一个个的说。</p>
+<h2 id="install-pip"><a href="#install-pip" class="headerlink" title="install pip"></a>install pip</h2><p>pip安装的时候，一直出现编码错误，编码长度超过了ascii的长度。这个一看就是编解码非utf-8的结果。<br>我在网上搜了很多次了，都说设置一下默认编码格式就行了。<br>但是问题是，我总不能在pip安装的时候，每次都手动下载源码包，然后编辑setup.py在文件头上设置一下吧。<br><a id="more"></a><br>（但是我还是这样做了两次…感觉自己脑残死了。）</p>
+<p>我想，这肯定是系统设置或者是pip的设置不是utf-8导致的。但是网上的教程都没说在哪设置。<br>最后，还是给我找到了。<br>在<code>/etc/python2.7</code>下的文件<code>sitecustomize.py</code>，在文件头上加入：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"><span class="keyword">import</span> sys</div><div class="line">reload(sys)</div><div class="line">sys.setdefaultencoding(<span class="string">'utf8'</span>)</div></pre></td></tr></table></figure></p>
+<p>就可以了。<br>也可以在Python的REPL环境下检测是不是生效了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; import sys</div><div class="line">&gt;&gt;&gt; sys.getdefaultencoding()</div><div class="line">&apos;utf8&apos; # 修改成了想要的编码格式</div></pre></td></tr></table></figure></p>
+<h2 id="pip-install-lxml"><a href="#pip-install-lxml" class="headerlink" title="pip install lxml"></a>pip install lxml</h2><blockquote>
+<p>这个大爷最牛。尼古拉斯·赵四如是说</p>
+</blockquote>
+<p>如果是一个全新安装的系统，会应该出现如下问题：</p>
+<ul>
+<li>缺少g++ compiler</li>
+<li>缺少一个安装包依赖</li>
+<li>你安装依赖发现安装不了</li>
+<li>你去Google，发现stackocerflow说让你安装一堆dev的包</li>
+<li>然后你发现还是不行</li>
+<li>你继续stackoverflow it</li>
+<li>你会发现这个对计算机剩余内存有要求，而且是512MB</li>
+<li>上面那个条件，不得不让你说：我赵日天服了。阿里云上的便宜的主机，连安装这个的资格都没…</li>
+</ul>
+<p>下面是安装的各种dev包：<br><code>python-dev python3-dev libevent-dev libxml2-dev libxslt1-dev zlib1g-dev</code><br>接下来是手动修改计算机内存（当然，这个是在虚拟机里了，物理机的你，别看了，想啥呢…)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">额，一时间找不到了，等找到之后再添加吧</div></pre></td></tr></table></figure>
+<p>这个是简单点的方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install libxml2</div><div class="line">sudo apt-get install libxslt1.1</div><div class="line">sudo apt-get install libxml2-dev</div><div class="line">sudo apt-get install libxslt1-dev</div><div class="line">sudo apt-get install python-libxml2</div><div class="line">sudo apt-get install python-libxslt1</div><div class="line">sudo apt-get install python-dev</div><div class="line">sudo apt-get install python-setuptools</div><div class="line"></div><div class="line">easy_install lxml</div><div class="line">sudo apt-get install python-lxml</div></pre></td></tr></table></figure></p>
+<p>这个方法的弊端就是如果你有两个版本的Python的时候，或者你想在virtualenv里安装呢（虚拟环境还想单独安装，想啥呢？）？</p>
+
+    
+  </div>
+  <footer>
+    
+      
+      
+  <div class="tags">
+    <a class="tags-link" href="/tags/python-pip-lxml/">python pip lxml</a>
+  </div>
+
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+</div>
+  </div>
+  <footer id="footer"><div class="copyright">
+  
+  &copy; 2016 <a href="/">Maicss</a>
+  
+</div>
+<div class="theme-copyright">
+  Theme by <a href="https://github.com/orderedlist" target="_blank">orderedlist</a>
+   | 
+  Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<script src="/js/scale.fix.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
+</script>
+
+</body>
+</html>
