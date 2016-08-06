@@ -1,0 +1,188 @@
+<!DOCTYPE HTML>
+<html>
+
+
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  
+  <title>virtualenv | Maic</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  
+    <meta name="author" content="Maicss">
+  
+  
+    <meta name="description" content="这个是python的虚拟环境的教程。
+为什么要使用虚拟环境好像一个长时间写代码的人都喜欢环境或者作用域的隔离。当我们安装好python之后，各种pip install。这个安装都是全局下的安装，但是当项目大的时候，就会遇到各种特殊情况。
+比如我就是想要某个版本的，你该说啦，我安装的时候指定安装版本还不行吗，这个是可以的。但是还有更变态的需求，我想测试一下两个版本都怎么样。遇到这个需求就SB了不是吗">
+  
+  <meta name="description" content="这个是python的虚拟环境的教程。
+为什么要使用虚拟环境好像一个长时间写代码的人都喜欢环境或者作用域的隔离。当我们安装好python之后，各种pip install。这个安装都是全局下的安装，但是当项目大的时候，就会遇到各种特殊情况。
+比如我就是想要某个版本的，你该说啦，我安装的时候指定安装版本还不行吗，这个是可以的。但是还有更变态的需求，我想测试一下两个版本都怎么样。遇到这个需求就SB了不是吗">
+<meta property="og:type" content="article">
+<meta property="og:title" content="virtualenv">
+<meta property="og:url" content="http://maicss.com/2016/07/14/virtualenv/index.html">
+<meta property="og:site_name" content="Maic">
+<meta property="og:description" content="这个是python的虚拟环境的教程。
+为什么要使用虚拟环境好像一个长时间写代码的人都喜欢环境或者作用域的隔离。当我们安装好python之后，各种pip install。这个安装都是全局下的安装，但是当项目大的时候，就会遇到各种特殊情况。
+比如我就是想要某个版本的，你该说啦，我安装的时候指定安装版本还不行吗，这个是可以的。但是还有更变态的需求，我想测试一下两个版本都怎么样。遇到这个需求就SB了不是吗">
+<meta property="og:updated_time" content="2016-07-14T05:03:49.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="virtualenv">
+<meta name="twitter:description" content="这个是python的虚拟环境的教程。
+为什么要使用虚拟环境好像一个长时间写代码的人都喜欢环境或者作用域的隔离。当我们安装好python之后，各种pip install。这个安装都是全局下的安装，但是当项目大的时候，就会遇到各种特殊情况。
+比如我就是想要某个版本的，你该说啦，我安装的时候指定安装版本还不行吗，这个是可以的。但是还有更变态的需求，我想测试一下两个版本都怎么样。遇到这个需求就SB了不是吗">
+  
+    <link rel="alternate" href="/atom.xml" title="Maic" type="application/atom+xml">
+  
+  
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-70116787-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <header id="header">
+  <div class="title">
+    <h1><a href="/">Maic</a></h1>
+    <p><a href="/">FEE maicss@foxmail.com</a></p>
+  </div>
+  <nav class="nav">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/others">NoName</a></li>
+      
+        <li><a href="/pics">Pics</a></li>
+      
+      
+        <li><a href="/atom.xml">RSS</a></li>
+      
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
+  <div class="clearfix"></div>
+</header>
+    <div class="content"><article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/2016/07/14/virtualenv/">
+  <time datetime="2016-07-14T02:11:57.000Z">
+    2016-07-14
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title">virtualenv</h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <p>这个是python的虚拟环境的教程。</p>
+<h2 id="为什么要使用虚拟环境"><a href="#为什么要使用虚拟环境" class="headerlink" title="为什么要使用虚拟环境"></a>为什么要使用虚拟环境</h2><p>好像一个长时间写代码的人都喜欢环境或者作用域的隔离。<br>当我们安装好python之后，各种<code>pip install</code>。这个安装都是全局下的安装，但是当项目大的时候，就会遇到各种特殊情况。</p>
+<p>比如我就是想要某个版本的，你该说啦，我安装的时候指定安装版本还不行吗，这个是可以的。<br>但是还有更变态的需求，我想测试一下两个版本都怎么样。遇到这个需求就SB了不是吗。</p>
+<p>一个健全的代码要满足所有的需求的（说起来都是泪）。</p>
+<p>于是就有了虚拟环境。就是一个独立的作用域。一个你可以在里面安装各种东西，而全局下的还是干净的玩意。<br>你可以有多少个需求就做多少个虚拟环境，不想用的时候直接<code>rm -rf</code>就完事了。</p>
+<p>而且一直使用全局安装的话，还会遇到安全问题。<br>因为pypi是不检测用户提交包的，而且谁都可以往上面提交包（chrome也是这德行，Firefox就有检测机制，但是Firefox好卡…）。所以，如果哪天你安装包的时候，不小心少敲了一个字母或者多敲了一个字母，或者写成其他的了，而且很巧pypi上面正好有一个盗版的包，你可是用<code>sudo</code>安装的哦，好怕怕！！</p>
+<p>So , virtualenv is the Prefect!</p>
+<p>下面我们来说说这玩意怎么具体实现。</p>
+<p><strong>这玩意的实现有两种方式</strong>，而这篇文章就是对比这两种方式。</p>
+<p>这篇文章不是这两种方式的教程。</p>
+<h2 id="1，virtualenv"><a href="#1，virtualenv" class="headerlink" title="1，virtualenv"></a>1，virtualenv</h2><p>这个比较单纯。</p>
+<blockquote>
+<p>Virtual Python Environment builder</p>
+</blockquote>
+<p>使用pip全局安装之后，你就能使用<code>virtualenv</code>命令了。</p>
+<p>因为单纯，所以纯洁（这是什么鬼）。</p>
+<p>所以你可以使用<code>virtualenv -p /your-python-env-dir your-env-name</code> 比如：<code>virtualenv -p python3 py3</code>创建虚拟环境（python3是个软连接，不懂软连接的Google）。这样之后，你就会在当前文件夹创建一个py3的文件夹，然后里面有个初始化了的py3环境。<br>然后<code>source py3/source/activate</code>就可以激活这个虚拟环境，注意路径就好了。</p>
+<p><code>-p</code>是指定python版本的意思。一般情况下，机器上是默认安装了<a href="https://pythonclock.org/" target="_blank" rel="external">python2</a>的，所以如果你安装了python3，就可以装两个不同的虚拟环境能满足日常需求了。~当然你也可以创建5000个py2的虚拟环境，5000个py3虚拟环境，就可以解锁python技能了~</p>
+<h2 id="2，conda"><a href="#2，conda" class="headerlink" title="2，conda"></a>2，conda</h2><p>这个比较重量级。是个集成环境。</p>
+<blockquote>
+<p>Conda is an open source package management system and environment management system for installing multiple versions of software packages and their dependencies and switching easily between them. It works on Linux, OS X and Windows, and was created for Python programs but can package and distribute any software.</p>
+</blockquote>
+
+    
+  </div>
+  <footer>
+    
+      
+      
+  <div class="tags">
+    <a class="tags-link" href="/tags/python/">python</a>
+  </div>
+
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">Comments</h1>
+  <div class="ds-thread" data-title="virtualenv">
+  </div>
+</section>
+</div>
+  </div>
+  <footer id="footer"><div class="copyright">
+  
+  &copy; 2016 <a href="/">Maicss</a>
+  
+</div>
+<div class="theme-copyright">
+  Theme by <a href="https://github.com/orderedlist" target="_blank">orderedlist</a>
+   | 
+  Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<script src="/js/scale.fix.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = { short_name: 'maicss' };
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';
+    ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
+</script>
+
+</body>
+</html>
