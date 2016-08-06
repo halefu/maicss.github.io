@@ -79,6 +79,46 @@
   <header>
     
       <div class="icon"></div>
+      <a href="/2016/08/06/入手树莓派/">
+  <time datetime="2016-08-06T09:59:55.000Z">
+    2016-08-06
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title"><a href="/2016/08/06/入手树莓派/">入手树莓派</a></h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <h2 id="入手"><a href="#入手" class="headerlink" title="入手"></a>入手</h2><p>终于忍不住剁手了买了。</p>
+<p>时候就是各种筹划能物有所值。</p>
+<p>首先我发现，这个风扇简直突破天际。3mm的风扇，却比我台式机的4个12cm的声音还大。果断还是拆了。<br>不过真的很热。一直显示是50°。可能是因为这两天上海温度本来就比较高吧(40°)。<br>不过这个温度还是在可接受范围内，这个风扇是要跟我一个屋的，想想，还是就这样吧。</p>
+<p>这个是购买的花费：</p>
+    
+  </div>
+  <footer class="end-sep">
+    
+      
+        <div class="alignleft">
+          <a href="/2016/08/06/入手树莓派/#more" class="more-link">Read More</a>
+        </div>
+      
+      
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+  
+    <article class="post">
+  <header>
+    
+      <div class="icon"></div>
       <a href="/2016/08/06/树莓派挂载硬盘/">
   <time datetime="2016-08-06T06:01:39.000Z">
     2016-08-06
@@ -99,24 +139,14 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">sudo blkid</div><div class="line"></div><div class="line">/dev/mmcblk0: PTUUID=&quot;00096d57&quot; PTTYPE=&quot;dos&quot;</div><div class="line">/dev/mmcblk0p1: LABEL=&quot;RECOVERY&quot; UUID=&quot;0403-0201&quot; TYPE=&quot;vfat&quot; PARTUUID=&quot;00096d57-01&quot;</div><div class="line">/dev/mmcblk0p5: LABEL=&quot;SETTINGS&quot; UUID=&quot;cb8378b5-105a-42c0-a60f-893aa325eb93&quot; TYPE=&quot;ext4&quot; PARTUUID=&quot;00096d57-05&quot;</div><div class="line">/dev/mmcblk0p6: SEC_TYPE=&quot;msdos&quot; LABEL=&quot;boot&quot; UUID=&quot;8CE1-9378&quot; TYPE=&quot;vfat&quot; PARTUUID=&quot;00096d57-06&quot;</div><div class="line">/dev/mmcblk0p7: LABEL=&quot;root&quot; UUID=&quot;82d2c250-fc8e-45fc-a223-76248b92ad25&quot; TYPE=&quot;ext4&quot; PARTUUID=&quot;00096d57-07&quot;</div><div class="line">/dev/sda1: SEC_TYPE=&quot;msdos&quot; UUID=&quot;6235-B0BA&quot; TYPE=&quot;vfat&quot; PARTLABEL=&quot;EFI system partition&quot; PARTUUID=&quot;20fe3944-5bcc-4441-baea-83f6838dc25a&quot;</div><div class="line">/dev/sda2: PARTLABEL=&quot;Microsoft reserved partition&quot; PARTUUID=&quot;3aa6b25b-e488-4b05-a782-3bf53e6bc2d4&quot;</div></pre></td></tr></table></figure>
 <p>上面是我的树莓派挂载硬盘之后的状况。<br>这里的<code>/dev/sda1</code>和<code>/dev/sda2</code>就是我的硬盘了。最起码证明硬盘没有损坏，树莓派识别了，没有因为供电不足连接不上等原因导致不能使用。</p>
 <p>上面的1和2就是硬盘的两个分区了。</p>
-<p>为了再次确认，我们来看看更详细的状况。<br><code>sudo fdisk -l</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">Disk /dev/ram0: 4 MiB, 4194304 bytes, 8192 sectors</div><div class="line">Units: sectors of 1 * 512 = 512 bytes</div><div class="line">Sector size (logical/physical): 512 bytes / 4096 bytes</div><div class="line">I/O size (minimum/optimal): 4096 bytes / 4096 bytes</div><div class="line">Disk /dev/ram1: 4 MiB, 4194304 bytes, 8192 sectors</div><div class="line">Units: sectors of 1 * 512 = 512 bytes</div><div class="line">Sector size (logical/physical): 512 bytes / 4096 bytes</div><div class="line">I/O size (minimum/optimal): 4096 bytes / 4096 bytes</div><div class="line"></div><div class="line">// 这里略过了一些内容</div><div class="line"></div><div class="line">Device         Boot   Start      End  Sectors  Size Id Type</div><div class="line">/dev/mmcblk0p1         8192  2289062  2280871  1.1G  e W95 FAT16 (LBA)</div><div class="line">/dev/mmcblk0p2      2289063 31211519 28922457 13.8G  5 Extended</div><div class="line">/dev/mmcblk0p5      2293760  2359293    65534   32M 83 Linux</div><div class="line">/dev/mmcblk0p6      2359296  2488319   129024   63M  c W95 FAT32 (LBA)</div><div class="line">/dev/mmcblk0p7      2490368 31211519 28721152 13.7G 83 Linux</div><div class="line"></div><div class="line">Disk /dev/sda: 465.8 GiB, 500107862016 bytes, 976773168 sectors</div><div class="line">Units: sectors of 1 * 512 = 512 bytes</div><div class="line">Sector size (logical/physical): 512 bytes / 512 bytes</div><div class="line">I/O size (minimum/optimal): 512 bytes / 512 bytes</div><div class="line">Disklabel type: gpt</div><div class="line">Disk identifier: 06ABE1B2-8385-4BF7-93C9-803768CECBAC</div><div class="line"></div><div class="line">Device      Start    End Sectors  Size Type</div><div class="line">/dev/sda1    2048 204799  202752   99M EFI System</div><div class="line">/dev/sda2  204800 466943  262144  128M Microsoft reserved</div></pre></td></tr></table></figure>
-<p>这次的信息更加详细了。可以看到我有两个磁盘，一个是一个16G的(TF)，一个是500G的硬盘。</p>
-<p>到这里就达到了确认硬盘挂载了，我们进行下一步。</p>
-<h3 id="删除硬盘分区并格式化"><a href="#删除硬盘分区并格式化" class="headerlink" title="删除硬盘分区并格式化"></a>删除硬盘分区并格式化</h3><p>使用新建磁盘命令：<code>sudo fdisk /dev/sda</code><br>这个命令有非常友好的提示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Welcome to fdisk (util-linux 2.25.2).</div><div class="line">Changes will remain in memory only, until you decide to write them.</div><div class="line">Be careful before using the write command.</div><div class="line"></div><div class="line"></div><div class="line">Command (m for help):</div></pre></td></tr></table></figure></p>
-<p>可以使用的选项有：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">p 显示现有Ubuntu硬盘分区  </div><div class="line">n 建立Ubuntu硬盘分区  </div><div class="line">t 更盘Ubuntu硬盘分区类型  </div><div class="line">d 删除Ubuntu硬盘分区  </div><div class="line">a 更改Ubuntu硬盘分区启动标志  </div><div class="line">w 对Ubuntu硬盘分区的更改写入硬盘并退出。  </div><div class="line">q 不保存更改退出</div></pre></td></tr></table></figure>
-<p>我们按照我们的需求，就是删除所有分区，创建一个新分区，依次键入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">// p: 先看一下现在的分区情况</div><div class="line">Disk /dev/sda: 465.8 GiB, 500107862016 bytes, 976773168 sectors</div><div class="line">Units: sectors of 1 * 512 = 512 bytes</div><div class="line">Sector size (logical/physical): 512 bytes / 512 bytes</div><div class="line">I/O size (minimum/optimal): 512 bytes / 512 bytes</div><div class="line">Disklabel type: gpt</div><div class="line">Disk identifier: 06ABE1B2-8385-4BF7-93C9-803768CECBAC</div><div class="line"></div><div class="line">Device      Start    End Sectors  Size Type</div><div class="line">/dev/sda1    2048 204799  202752   99M EFI System</div><div class="line">/dev/sda2  204800 466943  262144  128M Microsoft reserved</div><div class="line"></div><div class="line">// d 删除一个分区</div><div class="line">Partition number (1,2, default 2):</div><div class="line">Selected partition 2</div><div class="line">Partition 2 has been deleted.</div><div class="line">// 直接回车即可，然后再次键入d，删除另外一个。</div><div class="line"></div><div class="line"></div><div class="line">// p 显示删除后的状态</div><div class="line">Disk /dev/sda: 465.8 GiB, 500107862016 bytes, 976773168 sectors</div><div class="line">Units: sectors of 1 * 512 = 512 bytes</div><div class="line">Sector size (logical/physical): 512 bytes / 512 bytes</div><div class="line">I/O size (minimum/optimal): 512 bytes / 512 bytes</div><div class="line">Disklabel type: gpt</div><div class="line">Disk identifier: 06ABE1B2-8385-4BF7-93C9-803768CECBAC</div><div class="line"></div><div class="line">// n 新建一个分区，由于只需要创建一个分区，一路回车即可</div><div class="line">Partition number (1-128, default 1):</div><div class="line">First sector (34-976773134, default 2048):</div><div class="line">Last sector, +sectors or +size&#123;K,M,G,T,P&#125; (2048-976773134, default 976773134):</div><div class="line"></div><div class="line">Created a new partition 1 of type &apos;Linux filesystem&apos; and of size 465.8 GiB.</div><div class="line"></div><div class="line">// w 确认操作，进行写入</div><div class="line">The partition table has been altered.</div><div class="line">Calling ioctl() to re-read partition table.</div><div class="line">Syncing disks.</div></pre></td></tr></table></figure></p>
-<p>这个时候，分区就搞定了，我们再<code>sudo fdisk -l</code>查看一下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">// 上面略过一些内容</div><div class="line"></div><div class="line">Device         Boot   Start      End  Sectors  Size Id Type</div><div class="line">/dev/mmcblk0p1         8192  2289062  2280871  1.1G  e W95 FAT16 (LBA)</div><div class="line">/dev/mmcblk0p2      2289063 31211519 28922457 13.8G  5 Extended</div><div class="line">/dev/mmcblk0p5      2293760  2359293    65534   32M 83 Linux</div><div class="line">/dev/mmcblk0p6      2359296  2488319   129024   63M  c W95 FAT32 (LBA)</div><div class="line">/dev/mmcblk0p7      2490368 31211519 28721152 13.7G 83 Linux</div><div class="line"></div><div class="line">Disk /dev/sda: 465.8 GiB, 500107862016 bytes, 976773168 sectors</div><div class="line">Units: sectors of 1 * 512 = 512 bytes</div><div class="line">Sector size (logical/physical): 512 bytes / 512 bytes</div><div class="line">I/O size (minimum/optimal): 512 bytes / 512 bytes</div><div class="line">Disklabel type: gpt</div><div class="line">Disk identifier: 06ABE1B2-8385-4BF7-93C9-803768CECBAC</div><div class="line"></div><div class="line">Device     Start       End   Sectors   Size Type</div><div class="line">/dev/sda1   2048 976773134 976771087 465.8G Linux filesystem</div></pre></td></tr></table></figure></p>
-<p>开始格式化。<br><code>sudo mkfs -t ext4 /dev/sda1</code></p>
-<p>格式化成ext4，ext4和ext3是向上升级的关系，4兼容3，能力更大一点。这里我选择了4.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">mke2fs 1.42.12 (29-Aug-2014)</div><div class="line">/dev/sda1 contains a vfat file system</div><div class="line">无论如何也要继续? (y,n) y</div><div class="line">Creating filesystem with 122096385 4k blocks and 30531584 inodes</div><div class="line">Filesystem UUID: 94bcea79-04e3-4706-9964-9aef31791b07</div><div class="line">Superblock backups stored on blocks:</div><div class="line">	32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208,</div><div class="line">	4096000, 7962624, 11239424, 20480000, 23887872, 71663616, 78675968,</div><div class="line">	102400000</div><div class="line"></div><div class="line">Allocating group tables: 完成</div><div class="line">正在写入inode表: 完成</div><div class="line">Creating journal (32768 blocks): 完成</div><div class="line">Writing superblocks and filesystem accounting information: 完成</div></pre></td></tr></table></figure></p>
-<p>OK，搞定。</p>
-<p><strong>下一章预告：</strong>使用aria挂机下载</p>
-
     
   </div>
   <footer class="end-sep">
     
+      
+        <div class="alignleft">
+          <a href="/2016/08/06/树莓派挂载硬盘/#more" class="more-link">Read More</a>
+        </div>
       
       
     
@@ -259,51 +289,11 @@
 
 
   
-    <article class="post">
-  <header>
-    
-      <div class="icon"></div>
-      <a href="/2016/07/07/hello-world/">
-  <time datetime="2016-07-07T08:03:04.000Z">
-    2016-07-07
-  </time>
-</a>
-    
-    
-  
-    <h1 class="title"><a href="/2016/07/07/hello-world/">Hello World</a></h1>
-  
-
-  </header>
-  
-  <div class="entry">
-    
-      <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-    
-  </div>
-  <footer class="end-sep">
-    
-      
-      
-    
-    <div class="clearfix"></div>
-  </footer>
-</article>
-
-
-  
 
   <nav id="pagination">
   
+  
+    <a href="/page/2/" class="next">Next</a>
   
   <div class="clearfix"></div>
 </nav>
