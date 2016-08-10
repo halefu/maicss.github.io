@@ -27,12 +27,14 @@ var _hmt = _hmt || [];
     <meta name="description" content="这玩意就是个虚拟机，对于一般人来说，而且只能虚拟*nix系的操作系统。
 但是最大的用处是公司创建一个统一的工作环境。类似于一个Docker。布置一个服务器，上面安装好工作环境，放在公共仓库，然后其他人拷贝一份配置即可。能统一管理和解决工作环境问题。
 个人安装这个的代价，远比单用虚拟机软件来的大。
-因为一般来说，个人安装只需要一个镜像加一个虚拟机软件即可。">
+因为一般来说，个人安装只需要一个镜像加一个虚拟机软件即可。
+安装这个，软件要：虚拟机软件，vagran">
   
   <meta name="description" content="这玩意就是个虚拟机，对于一般人来说，而且只能虚拟*nix系的操作系统。
 但是最大的用处是公司创建一个统一的工作环境。类似于一个Docker。布置一个服务器，上面安装好工作环境，放在公共仓库，然后其他人拷贝一份配置即可。能统一管理和解决工作环境问题。
 个人安装这个的代价，远比单用虚拟机软件来的大。
-因为一般来说，个人安装只需要一个镜像加一个虚拟机软件即可。">
+因为一般来说，个人安装只需要一个镜像加一个虚拟机软件即可。
+安装这个，软件要：虚拟机软件，vagran">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vagrant教程">
 <meta property="og:url" content="http://maicss.com/2016/08/10/vagrant教程/index.html">
@@ -40,14 +42,16 @@ var _hmt = _hmt || [];
 <meta property="og:description" content="这玩意就是个虚拟机，对于一般人来说，而且只能虚拟*nix系的操作系统。
 但是最大的用处是公司创建一个统一的工作环境。类似于一个Docker。布置一个服务器，上面安装好工作环境，放在公共仓库，然后其他人拷贝一份配置即可。能统一管理和解决工作环境问题。
 个人安装这个的代价，远比单用虚拟机软件来的大。
-因为一般来说，个人安装只需要一个镜像加一个虚拟机软件即可。">
-<meta property="og:updated_time" content="2016-08-10T13:05:09.000Z">
+因为一般来说，个人安装只需要一个镜像加一个虚拟机软件即可。
+安装这个，软件要：虚拟机软件，vagran">
+<meta property="og:updated_time" content="2016-08-10T13:20:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vagrant教程">
 <meta name="twitter:description" content="这玩意就是个虚拟机，对于一般人来说，而且只能虚拟*nix系的操作系统。
 但是最大的用处是公司创建一个统一的工作环境。类似于一个Docker。布置一个服务器，上面安装好工作环境，放在公共仓库，然后其他人拷贝一份配置即可。能统一管理和解决工作环境问题。
 个人安装这个的代价，远比单用虚拟机软件来的大。
-因为一般来说，个人安装只需要一个镜像加一个虚拟机软件即可。">
+因为一般来说，个人安装只需要一个镜像加一个虚拟机软件即可。
+安装这个，软件要：虚拟机软件，vagran">
   
     <link rel="alternate" href="/atom.xml" title="Maic" type="application/atom+xml">
   
@@ -117,7 +121,9 @@ var _hmt = _hmt || [];
       <p>这玩意就是个虚拟机，对于一般人来说，而且只能虚拟*nix系的操作系统。</p>
 <p>但是最大的用处是公司创建一个统一的工作环境。类似于一个Docker。<br>布置一个服务器，上面安装好工作环境，放在公共仓库，然后其他人拷贝一份配置即可。<br>能统一管理和解决工作环境问题。</p>
 <p>个人安装这个的代价，远比单用虚拟机软件来的大。</p>
-<p>因为一般来说，个人安装只需要一个镜像加一个虚拟机软件即可。<br><a id="more"></a><br>安装这个，软件要：虚拟机软件，vagranr box，专门的镜像（也就意味着不能各种尝鲜，话说我刚开始玩unix的时候，玩的就是版本，各种版本都先装一遍看看…）。</p>
+<p>因为一般来说，个人安装只需要一个镜像加一个虚拟机软件即可。</p>
+<p>安装这个，软件要：虚拟机软件，vagranr box，专门的镜像（也就意味着不能各种尝鲜，话说我刚开始玩unix的时候，玩的就是版本，各种版本都先装一遍看看…）。</p>
+<a id="more"></a>
 <p>使用上，只能使用命令行，Windows平台还要下载专门的SSH客户端。镜像也只有官方的那几个（Ubuntu最新的为14.4）</p>
 <p>总结一句话：新手绕道。</p>
 <p>我最后选择这个的原因：最近想倒腾SSH，而且全命令行使用ubuntu虽然不咋滴，但是磕磕巴巴的也够用了。</p>
@@ -137,8 +143,8 @@ var _hmt = _hmt || [];
 <p><a href="https://atlas.hashicorp.com/boxes/search" target="_blank" rel="external">hashicorp</a>, <a href="http://www.vagrantbox.es/" target="_blank" rel="external">vagrantbox</a></p>
 <h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><p>这里只说Windows平台的安装（Mac OX的我也装了，以后再补充吧）。</p>
 <p>双击安装之后，会自动在path里添加vagrant。</p>
-<p>检查安装目录下是不是有<code>vagrantfile</code>，没有的话要自己创建一个，这个是虚拟机的配置文件，这个是必须的。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ mkdir vagrant_install_path</div><div class="line">$ cd vagrant_install_path</div><div class="line">$ vagrant init</div></pre></td></tr></table></figure>
+<p>检查安装目录下是不是有<code>vagrantfile</code>，没有的话要<code>init</code>自己创建一个，这个是虚拟机的配置文件，这个是必须的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mkdir vagrant_install_path</div><div class="line">cd vagrant_install_path</div><div class="line">vagrant init</div></pre></td></tr></table></figure>
 <p>vagrant初始化完毕，然后开始安装镜像。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ vagrant box add vmname mirror_path</div></pre></td></tr></table></figure>
 <p><code>vmname</code>是你想给这个虚拟机起的名字，以后也用这个管理</p>
